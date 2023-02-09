@@ -1,0 +1,22 @@
+version: "3"
+services:
+  flights-backend:
+    build: ./flights-backend
+    ports:
+      - 5050:5050
+    environment:
+      PROVIDER_HOST: provider
+  flights-bookings:
+    build: ./flights-bookings
+    environment:
+      PROVIDER_HOST: provider
+    ports:
+      - 5052:5052
+  flights-timetable:
+    build: ./flights-timetable
+    environment:
+      PROVIDER_HOST: provider
+    ports:
+      - 8085:8085
+
+
